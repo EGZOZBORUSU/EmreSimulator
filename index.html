@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emre Göksan Simülatörü — Boş Yapma Butonu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <!-- Welcome Screen (Bypasses Browser Audio Policy with Dramatic Flare) -->
+  <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-box">
+      <h1 class="welcome-title">EMRE GÖKSAN<br><span class="highlight-gold">SİMÜLATÖRÜ</span></h1>
+      <p class="welcome-quote">"Çünkü gitmek, bazen sadece bir montun fermuarını çekerken sıkışan astarı kurtarmaktı..."</p>
+      <button id="btn-start" class="btn-start">
+        <span class="btn-icon">▶</span>
+        <span>SESSİZLİĞİ BOZ (BELGESELE BAŞLA)</span>
+      </button>
+      <div class="welcome-subnote">Kulaklık veya açık hoparlör önerilir. Ney ve çello içermektedir.</div>
+    </div>
+  </div>
+
+  <!-- Cinematic Background Video Stage -->
+  <div id="video-container" class="video-container"></div>
+
+  <!-- Analog Film Grain & Dark Vignette Layer -->
+  <div class="film-grain"></div>
+  <div class="vignette"></div>
+
+  <!-- 2.39:1 Aspect Ratio Cinematic Letterbox Bars -->
+  <div class="letterbox letterbox-top">
+    <div class="film-header">
+      <span class="rec-dot"></span>
+      <span class="film-meta">EMRE GÖKSAN ARŞİVİ // BELGESEL NO: 404</span>
+      <button id="btn-credits" class="film-btn-credits" title="Festival Kapanış Jeneriği">📜 KÜNYE</button>
+      <span class="film-time" id="film-clock">00:00:00</span>
+    </div>
+  </div>
+  <div class="letterbox letterbox-bottom"></div>
+
+  <!-- Main Stage Experience -->
+  <main class="cinematic-stage">
+    
+    <!-- Interviewee / Philosopher Portrait (Fades in dramatically) -->
+    <div id="philosopher-card" class="philosopher-card">
+      <div class="portrait-wrapper">
+        <img id="philosopher-img" src="/images/eren_efe_1.png" alt="Düşünür" class="philosopher-img">
+        <div class="portrait-scanline"></div>
+      </div>
+      <div class="lower-third">
+        <div class="lower-third-tag">RÖPORTAJ // ARŞİV KAYDI</div>
+        <div id="philosopher-name" class="lower-third-name">Eren Efe Özkan</div>
+        <div id="philosopher-title" class="lower-third-title">Bağımsız Düşünür & Riga Felsefe Enstitüsü</div>
+      </div>
+    </div>
+
+    <!-- Subtitle / Aforizma Canvas -->
+    <div class="subtitle-stage">
+      <div class="quote-symbol">“</div>
+      <div id="quote-text" class="quote-text">
+        Yükleniyor...
+      </div>
+      <div class="quote-footer">
+        <span id="quote-author" class="quote-author">— Eren Efe Özkan</span>
+        <span id="quote-year" class="quote-year">(Riga, 2024)</span>
+        <button id="btn-copy" class="btn-copy-quote" title="WhatsApp veya Twitter için Kopyala">📋 Kopyala</button>
+      </div>
+    </div>
+
+    <!-- Category Pills Filter Dock -->
+    <div class="category-dock">
+      <button class="cat-pill active" data-cat="all">🎲 RASTGELE KAOS</button>
+      <button class="cat-pill" data-cat="felsefi">☕ DERİN FELSEFE</button>
+      <button class="cat-pill" data-cat="sert">⚡ SERT TOKAT</button>
+      <button class="cat-pill" data-cat="melankolik">🚬 AĞIR MELANKOLİ</button>
+      <button class="cat-pill" data-cat="motive">📈 TOKSİK GRİNDSET</button>
+      <button class="cat-pill" data-cat="cinsel">🔞 CİNSEL REZİLLİK</button>
+    </div>
+
+    <!-- Control Dock & The Big Red Button -->
+    <div class="control-dock">
+      
+      <!-- Side Action: Mute -->
+      <button id="btn-mute" class="dock-btn" title="Sesi Aç/Kapat">
+        <span id="mute-icon">🔊</span>
+        <span class="dock-btn-label">SES</span>
+      </button>
+
+      <!-- Centerpiece: THE BIG RED BUTTON -->
+      <button id="btn-trigger" class="the-red-button" title="Yeni aforizma patlat">
+        <div class="button-inner-glow"></div>
+        <div class="button-core">
+          <span class="button-pulse"></span>
+          <span class="button-text">BOŞ YAP</span>
+        </div>
+      </button>
+
+      <!-- Side Action: Download Poster -->
+      <button id="btn-poster" class="dock-btn" title="Instagram Postu Olarak İndir (HD PNG)">
+        <span>📥</span>
+        <span class="dock-btn-label">POSTER İNDİR</span>
+      </button>
+
+      <!-- Side Action: Prescription / Reçete -->
+      <button id="btn-prescription" class="dock-btn" title="Felsefi Teşhis & Reçete Al">
+        <span>📋</span>
+        <span class="dock-btn-label">REÇETE AL</span>
+      </button>
+
+      <!-- Side Action: Felsefi Diss -->
+      <button id="btn-diss" class="dock-btn" title="Arkadaşına Felsefi Diss At (50+ Cümle)">
+        <span>⚔️</span>
+        <span class="dock-btn-label">DİSS AT</span>
+      </button>
+
+      <!-- Side Action: Efkar Modu (Sol tık: Sigara, Sağ tık: Rakı) -->
+      <button id="btn-efkar" class="dock-btn" title="Sol Tık: Sigara Yak | Sağ Tık: Rakı Doldur">
+        <span id="efkar-icon">🚬</span>
+        <span class="dock-btn-label">EFKAR</span>
+      </button>
+
+      <!-- Side Action: Add Custom Victim -->
+      <button id="btn-custom" class="dock-btn" title="Yeni Kurban / Arkadaş Ekle">
+        <span>➕</span>
+        <span class="dock-btn-label">YENİ KURBAN</span>
+      </button>
+
+    </div>
+
+  </main>
+
+  <!-- Modal: Festival Kapanış Jeneriği (Credits Roll) -->
+  <div id="credits-modal" class="modal-backdrop">
+    <div class="credits-box">
+      <button id="btn-close-credits" class="modal-close credits-close">&times;</button>
+      <div class="credits-crawl">
+        <div class="credits-title">BİR EMRE GÖKSAN YAPIMI</div>
+        <div class="credits-line"><span class="role">Baş Düşünür:</span> <span class="name">Eren Efe Özkan</span></div>
+        <div class="credits-line"><span class="role">Gereksiz rage atma hastalıklısı:</span> <span class="name">Efe Sözer</span></div>
+        <div class="credits-line"><span class="role">Kombinler Zara'dan:</span> <span class="name">Metehan Aydın</span></div>
+        <div class="credits-line"><span class="role">Anime kızı 31'cisi:</span> <span class="name">Demir Lekesiz</span></div>
+        <div class="credits-line"><span class="role">Fikir babası rahmet ve özlemle:</span> <span class="name">Emre Göksan</span></div>
+        <div class="credits-divider">❖ ❖ ❖</div>
+        <div class="credits-sub">"Çünkü gitmek, bazen sadece bir montun fermuarını çekmekti..."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Felsefi Diss Generator -->
+  <div id="diss-modal" class="modal-backdrop">
+    <div class="diss-card">
+      <div class="diss-header">
+        <span class="diss-badge">⚔️ FELSEFİ HESAPLAŞMA // DİSS</span>
+        <button id="btn-close-diss" class="modal-close">&times;</button>
+      </div>
+      <div class="diss-combatants">
+        <div class="combatant combatant-from">
+          <img id="diss-from-img" src="/images/demir.png" alt="Diss Atan">
+          <span id="diss-from-name">Demir Lekesiz</span>
+        </div>
+        <div class="diss-vs">➜</div>
+        <div class="combatant combatant-to">
+          <img id="diss-to-img" src="/images/sozer.jpeg" alt="Hedef">
+          <span id="diss-to-name">Efe Sözer</span>
+        </div>
+      </div>
+      <div class="diss-quote-box">
+        <div class="quote-symbol">“</div>
+        <p id="diss-text">Sen o arabanın kapısını çarptığında sadece kapı kapanmadı be Sözer; aramızdaki dostluk contası da yandı...</p>
+      </div>
+      <button id="btn-next-diss" class="btn-next-diss">BAŞKA BİRİNE DİSS AT</button>
+    </div>
+  </div>
+
+  <!-- Modal: Felsefi Reçete & Rapor -->
+  <div id="prescription-modal" class="modal-backdrop">
+    <div class="prescription-card">
+      <div class="prescription-header">
+        <div class="rx-logo">℞</div>
+        <div class="rx-titles">
+          <h3>RİGA FELSEFE & ÇARESİZLİK HASTANESİ</h3>
+          <p>VAROLUŞSAL TRAVMA VE MELANKOLİ POLİKLİNİĞİ</p>
+        </div>
+        <button id="btn-close-rx" class="modal-close">&times;</button>
+      </div>
+      <div class="rx-body">
+        <div class="rx-row"><span>HASTA ADI:</span> <strong id="rx-patient">Anonim Melankolik</strong></div>
+        <div class="rx-row"><span>MÜŞAHEDE DOKTORU:</span> <strong id="rx-doctor">Prof. Dr. Emre Göksan</strong></div>
+        <div class="rx-row"><span>RESMİ TEŞHİS:</span> <strong id="rx-diagnosis">Akut Mont Fermuarı Sıkışması ve Kronik Yalnızlık</strong></div>
+        <div class="rx-box">
+          <div class="rx-box-title">REÇETE VE TEDAVİ PROTOKOLÜ:</div>
+          <div id="rx-cure" class="rx-cure-text">
+            • Sabah-akşam aç karnına 1 doz Can Dündar aforizması dinlenecek.<br>
+            • Gece 03:00'ten sonra asla eski sevgiliye mesaj atılmayacak.<br>
+            • Islak tuvalet terliğine çorapla basmaktan derhal imtina edilecek.
+          </div>
+        </div>
+      </div>
+      <div class="prescription-footer">
+        <div class="rx-stamp">RESMİ KAŞE: RİGA TIP & FELSEFE ONAYLIDIR</div>
+        <div class="rx-date" id="rx-date">2024-10-09</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Yeni Kurban / Arkadaş Ekle -->
+  <div id="custom-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>YENİ KURBAN / DÜŞÜNÜR EKLE</h2>
+        <button id="btn-close-modal" class="modal-close">&times;</button>
+      </div>
+      <p class="modal-desc">Arkadaşının fotoğrafını yükle; Emre Göksan onu anında Doğu Avrupa melankolisine sahip bir filozofa dönüştürsün.</p>
+      
+      <form id="custom-form" class="modal-form">
+        <div class="form-group">
+          <label>Arkadaşın Adı Soyadı:</label>
+          <input type="text" id="victim-name" required placeholder="Örn: Ahmet Yılmaz">
+        </div>
+        <div class="form-group">
+          <label>Uydurma Akademik Unvanı:</label>
+          <input type="text" id="victim-title" required placeholder="Örn: Halı Saha Sosyoloğu & Bunalım Uzmanı">
+        </div>
+        <div class="form-group">
+          <label>Fotoğrafı Seç:</label>
+          <input type="file" id="victim-file" accept="image/*" required>
+        </div>
+        <button type="submit" class="modal-submit">KURBANI KADROYA DAHİL ET</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
